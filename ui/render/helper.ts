@@ -10,7 +10,8 @@ export function percentageSize(size: number, size2: number) {
 
 export function unitSize(value: number, isText?: boolean) {
     // logic point
-    let pt = value / project.resolution;
+    // let pt = value / project.resolution;
+    let pt = value;
     // convert to display value
     let sz = Math.round(pt * state.scale * 100) / 100;
     let units = state.unit.split("/");
