@@ -172,12 +172,12 @@ function getLayerTask(artboard: Artboard, layer: Layer, data: ArtboardData, byIn
 
 function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: string, i: number) {
     // data.artboards[artboardIndex].imagePath = "preview/" + objectID + ".png";
-    data.artboards[i].imagePath = "preview/" + encodeURI(data.artboards[i].slug) + ".png";
-    data.artboards[i].imageIconPath = "preview/icons/" + encodeURI(data.artboards[i].slug) + ".png";
+    data.artboards[i].imagePath = "preview/" + encodeURI(data.artboards[i].slug) + ".jpg";
+    data.artboards[i].imageIconPath = "preview/icons/" + encodeURI(data.artboards[i].slug) + ".jpg";
     exportImage(
         artboard,
         {
-            format: 'png',
+            format: 'jpg',
             // always export @2x (logic points * 2)
             // if design resolution @2x, we export as is (scale=1)
             // if design resolution @4x, we export half size (scale=0.5)
@@ -189,7 +189,7 @@ function exportArtboardAdvanced(artboard: Artboard, data: ExportData, savePath: 
     );
 
     exportImage(artboard, {
-        format: 'png',
+        format: 'jpg',
         scale: 128 / Math.max(data.artboards[i].width, data.artboards[i].height),
         prefix: "",
         suffix: "",
@@ -207,7 +207,7 @@ function exportArtboard(artboard: Artboard, exportData: ExportData, index: numbe
     let imageBase64 = exportImageToBuffer(
         artboard,
         {
-            format: 'png',
+            format: 'jpg',
             // always export @2x (logic points * 2)
             // if design resolution @2x, we export as is (scale=1)
             // if design resolution @4x, we export half size (scale=0.5)
@@ -217,7 +217,7 @@ function exportArtboard(artboard: Artboard, exportData: ExportData, index: numbe
         }
     ).toString('base64');
 
-    data.imageBase64 = 'data:image/png;base64,' + imageBase64;
+    data.imageBase64 = 'data:image/jpg;base64,' + imageBase64;
     let newData = <ExportData>{
         resolution: exportData.resolution,
         unit: exportData.unit,
