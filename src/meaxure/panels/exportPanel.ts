@@ -110,7 +110,7 @@ function prepareExportData(): [ExportData, { [key: string]: Artboard }] {
         pages: [],
         exportOption: true,
         exportInfluenceRect: context.configs.byInfluence,
-        order: 'artboard-rows',
+        order: 'layer-order',
         reverse: false,
     };
 
