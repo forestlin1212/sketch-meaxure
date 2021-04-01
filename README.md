@@ -44,7 +44,7 @@
 ## How to build
 
 - Install npm
-- [Download](https://github.com/qjebbs/sketch-meaxure/releases/latest/download/sketch-meaxure.sketchplugin.zip) the Sketch-Meaxure.sketchplugin to project root directory, and rename to `sketch-meaxure.sketchplugin`
+- [Download](https://github.com/forestlin1212/sketch-meaxure/releases/download/v3.3.5/sketch-meaxure.sketchplugin.zip) the Sketch-Meaxure.sketchplugin and unzip to project root directory, and rename to `sketch-meaxure.sketchplugin`
 - cd to project root directory
 - `npm install typescript`
 - `npm install webpack`
