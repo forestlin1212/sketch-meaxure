@@ -82,7 +82,8 @@ export async function exportSpecification() {
         let select = results.selection[i];
         let artboard = select.artboard;
         let page = artboard.parent as Page;
-        let fileName = toSlug(page.name + ' ' + (artboard.index + 1) + ' ' + artboard.name);
+        //let fileName = toSlug(page.name + ' ' + (artboard.index + 1) + ' ' + artboard.name);
+        let fileName = toSlug(artboard.name);
         data.artboards[i] = <ArtboardData>{
             notes: [],
             layers: [],
