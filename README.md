@@ -34,8 +34,10 @@
 
 ## The difference of this repo
 
-- The exported preview images is changed from png to jpg, which can save a lot of storage.
-- Restored the scale options of Sketch Measure, and delete "Convert to pixels".  In fact, I don’t think "Convert to pixels" is useful.
+- **The exported preview images is changed from png to jpg**, which can save a lot of storage.
+- **Restored the scale options of Sketch Measure, and delete "Convert to pixels"**.  In fact, I don’t think "Convert to pixels" is useful.
+- **Change the exported preview image file name and link file name**. Delete the page name and artboard index, only keep the artboard name. Because when artboards order is changed, the exported preview pictures and links will be renamed, resulting in many useless files.
+- **Defualt artboard order set to layer-order.**
 
 
 
