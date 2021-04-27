@@ -52,23 +52,29 @@ function getExportable(layer: Layer): SMExportable[] {
     let exportable = [];
     let sizes = layer.exportFormats;
     let fileFormat = sizes[0].fileFormat;
-    let exportFormats = sizes.map(s => parseExportFormat(s, layer));
-    for (let exportFormat of exportFormats) {
+    // let exportFormats = sizes.map(s => parseExportFormat(s, layer));
+    // for (let exportFormat of exportFormats) {
+
+        let exportFormat = parseExportFormat(sizes[0], layer)
+        //Export vector images only.
+        //Because bitmaps need to be compressed by other tools, direct export is not the best size, there is no need to put them in Spec
         let prefix = exportFormat.prefix || "",
             suffix = exportFormat.suffix || "";
-        exportImage(layer, {
-            scale: exportFormat.scale,
-            prefix: prefix,
-            suffix: suffix,
-            format: exportFormat.format
-        }, assetsPath, layer.name);
-
+        if (fileFormat == "pdf" || fileFormat == "svg" || fileFormat == "eps") {
+            exportImage(layer, {
+                scale: exportFormat.scale,
+                prefix: prefix,
+                suffix: suffix,
+                format: exportFormat.format
+            }, assetsPath, layer.name);
+        }
         exportable.push({
             name: layer.name,
             format: fileFormat,
             path: prefix + layer.name + suffix + "." + exportFormat.format
         });
-    }
+        
+    // }
 
     return exportable;
 }
